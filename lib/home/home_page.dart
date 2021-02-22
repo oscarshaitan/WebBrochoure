@@ -80,13 +80,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     if (isClosed) {
       //opens
       _controllerLeftCover.forward();
-      await Future.delayed(Duration(milliseconds: 400));
+      await Future.delayed(Duration(milliseconds: 300));
 
       _controllerRightCover.forward();
     } else {
       //close
       _controllerRightCover.reverse();
-      await Future.delayed(Duration(milliseconds: 400));
+      await Future.delayed(Duration(milliseconds: 300));
       _controllerLeftCover.reverse();
     }
     setState(() {

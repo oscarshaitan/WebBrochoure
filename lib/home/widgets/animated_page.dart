@@ -67,7 +67,7 @@ class _AnimatedScreenState extends State<AnimatedScreen>
           ? FractionalOffset.centerRight
           : FractionalOffset.centerLeft,
       transform: Matrix4.identity()
-        ..setEntry(3, 2, 0.001)
+        ..setEntry(3, 2, 0.0001)
         ..rotateY(pi * _animation.value),
       child: getScreen(),
     );
