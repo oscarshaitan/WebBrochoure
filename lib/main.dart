@@ -3,7 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'home/home_page.dart';
 
+import 'injector_container.dart' as injection;
+
 void main() {
+  injection.init();
   runApp(MyApp());
 }
 

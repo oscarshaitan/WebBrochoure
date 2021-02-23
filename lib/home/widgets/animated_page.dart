@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:oscar_web_resume/_core/constants.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
 
 import 'package:flutter/material.dart';
@@ -31,13 +32,21 @@ class _AnimatedScreenState extends State<AnimatedScreen>
       if (_animation.value > -0.5) {
         visibleScreen = widget.cover;
       } else {
-        visibleScreen = widget.inside;
+        visibleScreen = Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.rotationY(pi),
+          child: widget.inside,
+        );
       }
     } else {
       if (_animation.value < 0.5) {
         visibleScreen = widget.cover;
       } else {
-        visibleScreen = widget.inside;
+        visibleScreen = Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.rotationY(pi),
+          child: widget.inside,
+        );
       }
     }
     return visibleScreen;
@@ -84,13 +93,7 @@ class ImageScreen extends StatelessWidget {
     return Container(
       height: context.getHeightPage,
       width: context.getWithPage,
-      decoration: BoxDecoration(color: const Color(0xFFFFFFFF), boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          offset: Offset(0, 3),
-          blurRadius: 2.5,
-        )
-      ]),
+      decoration: pageDecoration,
       child: Container(
         child: Image.network(
             'https://i.picsum.photos/id/530/300/500.jpg?hmac=3pJ7cCaO6Xox2U_rU8Lvq0-Eg010Hbs2__3jYRsXbus'),
