@@ -1,9 +1,8 @@
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:oscar_web_resume/_core/models/resume_owner.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
+import 'package:oscar_web_resume/_core/models/resume_owner.dart';
 
 import '../animated_page.dart';
 import '../central_page.dart';

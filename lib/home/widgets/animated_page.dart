@@ -1,9 +1,8 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:oscar_web_resume/_core/constants.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
-
-import 'package:flutter/material.dart';
 
 class AnimatedScreen extends StatefulWidget {
   final AnimationController controller;
