@@ -16,6 +16,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   _init() async {
     _resumeOwner = ResumeOwner.fromJson(await _resumeRepository.getResume);
+    emit(ResumeLoaded(resumeOwner: _resumeOwner));
   }
 
   loadResume() async {

@@ -18,16 +18,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         textTheme: TextTheme(
-          headline3: GoogleFonts.robotoSlab(
+          headline1: GoogleFonts.robotoSlab(
             color: Colors.white,
             shadows: <Shadow>[
               Shadow(
-                offset: Offset(-3.5, 3.5),
+                offset: Offset(-8, 8),
                 blurRadius: 1.0,
                 color: Colors.deepOrangeAccent,
               ),
               Shadow(
-                offset: Offset(-2.0, 2.0),
+                offset: Offset(-4.0, 4.0),
                 blurRadius: 1.0,
                 color: Colors.black45,
               ),

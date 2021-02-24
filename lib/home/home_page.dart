@@ -8,61 +8,21 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 import '../injector_container.dart';
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  AnimationController _controllerLeftCover;
-  AnimationController _controllerRightCover;
-  bool isClosed = true;
-
-  @override
-  void initState() {
-    _controllerLeftCover = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 400),
-    );
-    _controllerRightCover = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 400),
-    );
-
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _controllerLeftCover.dispose();
-    _controllerRightCover.dispose();
-    super.dispose();
-  }
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black45,
+      backgroundColor: Colors.black12,
       body: BlocProvider<HomeCubit>(
         create: (context) => sl(),
         child: BlocConsumer<HomeCubit, HomeState>(
           listener: (context, state) {},
           builder: (context, state) {
-            return Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('lib/_core/assets/image/wood_wall.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+            return Center(
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 450),
                 child: state is HomeInitial
-                    ? LoadingResume(
-                        onFinished: () {
-                          context.read<HomeCubit>().loadResume();
-                        },
-                      )
+                    ? LoadingResume()
                     : // Construct and pass in a widget builder per screen type
                     ScreenTypeLayout.builder(
                         mobile: (BuildContext context) =>
@@ -71,9 +31,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                             Container(color: Colors.yellow),
                         desktop: (BuildContext context) => WebResume(
                           resumeOwner: state.resumeOwner,
-                          onOpenCover: _openCover,
-                          controllerRightCover: _controllerRightCover,
-                          controllerLeftCover: _controllerLeftCover,
                         ),
                       ),
               ),
@@ -82,23 +39,5 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         ),
       ),
     );
-  }
-
-  _openCover() async {
-    if (isClosed) {
-      //opens
-      _controllerLeftCover.forward();
-      await Future.delayed(Duration(milliseconds: 200));
-
-      _controllerRightCover.forward();
-    } else {
-      //close
-      _controllerRightCover.reverse();
-      await Future.delayed(Duration(milliseconds: 200));
-      _controllerLeftCover.reverse();
-    }
-    setState(() {
-      isClosed = !isClosed;
-    });
   }
 }

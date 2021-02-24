@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:oscar_web_resume/_core/constants.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
 
 class AnimatedScreen extends StatefulWidget {
@@ -89,13 +88,18 @@ class ImageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.getHeightPage,
-      width: context.getWithPage,
-      decoration: pageDecoration,
+    return Card(
+      elevation: 5,
+      margin: EdgeInsets.all(0),
       child: Container(
-        child: Image.network(
-            'https://i.picsum.photos/id/530/300/500.jpg?hmac=3pJ7cCaO6Xox2U_rU8Lvq0-Eg010Hbs2__3jYRsXbus'),
+        height: context.getHeightPage,
+        width: context.getWithPage,
+        color: Colors.white,
+        //decoration: pageDecoration,
+        child: Container(
+          child: Image.network(
+              'https://i.picsum.photos/id/530/300/500.jpg?hmac=3pJ7cCaO6Xox2U_rU8Lvq0-Eg010Hbs2__3jYRsXbus'),
+        ),
       ),
     );
   }
@@ -118,16 +122,7 @@ class CoverScreen extends StatelessWidget {
     return Container(
       height: context.getHeightPage,
       width: context.getWithPage,
-      decoration: BoxDecoration(
-        color: color,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            offset: Offset(0, 3),
-            blurRadius: 2.5,
-          ),
-        ],
-      ),
+      //decoration: pageDecoration,
       child: Center(
         child: ElevatedButton(
           onPressed: () {

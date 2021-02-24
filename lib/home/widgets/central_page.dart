@@ -9,23 +9,28 @@ class CentralPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.getHeightPage,
-      width: context.getWithPage,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      decoration: pageDecoration,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Text(
-            'CenterPage',
-            style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue),
-          ),
-        ],
+    return Card(
+      elevation: 5,
+      margin: EdgeInsets.all(0),
+      child: Container(
+        height: context.getHeightPage,
+        width: context.getWithPage,
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        //decoration: pageDecoration,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              'CenterPage',
+              style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue),
+            ),
+          ],
+        ),
       ),
     );
   }

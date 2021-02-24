@@ -14,9 +14,13 @@ class LoadingResume extends StatelessWidget {
     return Center(
       child: RotateAnimatedTextKit(
           onFinished: onFinished,
-          text: ["FETCHING THE RESUME", "BUILDING THE AWESOMENESS",],
+          text: [
+            "FETCHING THE RESUME",
+            "BUILDING THE AWESOMENESS",
+          ],
           isRepeatingAnimation: false,
-          textStyle: Theme.of(context).textTheme.headline3,
+          textStyle:
+              Theme.of(context).textTheme.headline1.copyWith(fontSize: 39),
           textAlign: TextAlign.start),
     );
   }
