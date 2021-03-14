@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oscar_web_resume/_core/constants.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
+import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
 
 class CentralPage extends StatelessWidget {
   const CentralPage({

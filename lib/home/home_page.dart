@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oscar_web_resume/home/cubit/home_cubit.dart';
 import 'package:oscar_web_resume/home/widgets/loading_resume.dart';
-import 'package:oscar_web_resume/home/widgets/resposive_widgets/web_resume.dart';
+import 'package:oscar_web_resume/home/widgets/resposive_widgets/web/web_resume.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../injector_container.dart';
