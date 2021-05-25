@@ -8,3 +8,4 @@ subtitle2: single shadow for the news title
 List of Widgets created for this example:
 BookMarkButton: button with the shape ofg bookmark with hover animation
 
+![WebBriochouse](src/brochure.gif)

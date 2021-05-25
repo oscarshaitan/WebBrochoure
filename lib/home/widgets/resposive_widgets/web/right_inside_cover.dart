@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
 import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
 
-import '../../page_title.dart';
 
 class RightInsideCover extends StatelessWidget {
   final Function() onOpenCover;
@@ -32,15 +31,7 @@ class RightInsideCover extends StatelessWidget {
                   width: context.getWithPage,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  vertical: 32,
-                  horizontal: 64,
-                ),
-                child: PageTitle(
-                  title: 'CONTACT',
-                ),
-              ),
+
               BookMarkButton(
                 rotated: true,
                 onPressed: onOpenCover,
