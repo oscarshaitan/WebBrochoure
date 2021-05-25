@@ -1,16 +1,10 @@
-# oscar_web_resume
+# brochure animations example
 
-A web for my personal resume
+Simple web for a brochure animation and some other custom widgets created.
+Styles:
+title1: double shadow used on the 'BROCHURE TITLE'
+subtitle2: single shadow for the news title
 
-## Getting Started
+List of Widgets created for this example:
+BookMarkButton: button with the shape ofg bookmark with hover animation
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

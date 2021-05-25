@@ -1,9 +1,5 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:oscar_web_resume/_core/models/resume_owner.dart';
-import 'package:oscar_web_resume/_core/transforms/bookmark_clipper.dart';
-import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
 import 'package:oscar_web_resume/home/widgets/resposive_widgets/web/right_inside_cover.dart';
 
 import '../../animated_page.dart';
@@ -11,12 +7,6 @@ import '../../central_page.dart';
 import 'left_outside_cover.dart';
 
 class WebResume extends StatefulWidget {
-  final ResumeOwner resumeOwner;
-
-  const WebResume({
-    Key key,
-    @required this.resumeOwner,
-  }) : super(key: key);
 
   @override
   _WebResumeState createState() => _WebResumeState();
@@ -66,7 +56,6 @@ class _WebResumeState extends State<WebResume> with TickerProviderStateMixin {
         _AnimatedResume(
           controllerRightCover: _controllerRightCover,
           controllerLeftCover: _controllerLeftCover,
-          resumeOwner: widget.resumeOwner,
           onOpenCover: _openCover,
         ),
         _OpenResumed(
@@ -132,13 +121,11 @@ class _AnimatedResume extends StatelessWidget {
     Key key,
     @required this.controllerRightCover,
     @required this.controllerLeftCover,
-    @required this.resumeOwner,
     this.onOpenCover,
   }) : super(key: key);
 
   final AnimationController controllerRightCover;
   final AnimationController controllerLeftCover;
-  final ResumeOwner resumeOwner;
   final Function() onOpenCover;
 
   @override
@@ -157,7 +144,6 @@ class _AnimatedResume extends StatelessWidget {
           inverseAnimation: false,
           cover: LeftOutsideCover(
             onOpenCover: onOpenCover,
-            resumeOwner: resumeOwner,
           ),
           inside: ImageScreen(),
         ),

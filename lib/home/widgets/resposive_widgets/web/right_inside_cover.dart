@@ -1,6 +1,4 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-
 import 'package:oscar_web_resume/_core/functions.dart';
 import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
 
@@ -25,21 +23,22 @@ class RightInsideCover extends StatelessWidget {
           child: Stack(
             children: [
               Container(
+                height: context.getHeightPage,
+                width: context.getWithPage,
+                color: Colors.white,
+                child: Image.asset(
+                  'lib/_core/assets/image/cover_2.jpeg',
+                  height: context.getHeightPage,
+                  width: context.getWithPage,
+                ),
+              ),
+              Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 32,
                   horizontal: 64,
                 ),
-                child: Column(
-                  children: [
-                    PageTitle(
-                      title: 'CONTACT',
-                    ),
-                    Text('Please feel free to contact me about anything'),
-                    DottedBorder(
-                        child: Container(
-                      child: Text('LET\'SOCIALIZE'),
-                    ))
-                  ],
+                child: PageTitle(
+                  title: 'CONTACT',
                 ),
               ),
               BookMarkButton(

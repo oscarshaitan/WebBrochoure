@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oscar_web_resume/_core/constants.dart';
 import 'package:oscar_web_resume/_core/functions.dart';
-import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
 
 class CentralPage extends StatelessWidget {
   const CentralPage({
@@ -16,21 +14,11 @@ class CentralPage extends StatelessWidget {
       child: Container(
         height: context.getHeightPage,
         width: context.getWithPage,
-        color: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        //decoration: pageDecoration,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
-              'CenterPage',
-              style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue),
-            ),
-          ],
+        color: Colors.black,
+        child: Image.asset(
+          'lib/_core/assets/image/center.jpeg',
+          height: context.getHeightPage,
+          width: context.getWithPage,
         ),
       ),
     );

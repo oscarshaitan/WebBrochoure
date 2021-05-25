@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:oscar_web_resume/_core/models/resume_owner.dart';
-import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
-
 import 'package:oscar_web_resume/_core/functions.dart';
+import 'package:oscar_web_resume/_core/widgets/bookmark_button.dart';
 
 class LeftOutsideCover extends StatelessWidget {
   final Function() onOpenCover;
-  final ResumeOwner resumeOwner;
 
   const LeftOutsideCover({
     Key key,
     @required this.onOpenCover,
-    @required this.resumeOwner,
   }) : super(key: key);
 
   @override
@@ -32,14 +28,16 @@ class LeftOutsideCover extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Container(
+            Positioned.fill(
+                child: Container(
+              height: context.getHeightPage,
+              width: context.getWithPage,
               margin: EdgeInsets.only(left: 8, right: 8, top: 32),
-              child: Column(
+              child: ListView(
                 children: [
                   FittedBox(
                     fit: BoxFit.fitWidth,
-                    child: Text(
-                      resumeOwner.name.toUpperCase(),
+                    child: Text('BROCHURE TITLE',
                       textAlign: TextAlign.center,
                       style: Theme.of(context)
                           .textTheme
@@ -47,8 +45,7 @@ class LeftOutsideCover extends StatelessWidget {
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Text(
-                    resumeOwner.subtitle,
+                  Text('Brochure subtitle',
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme
@@ -67,20 +64,20 @@ class LeftOutsideCover extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CoverLabel(
-                              title: 'I AM FROM',
-                              value: resumeOwner.from.toUpperCase(),
+                              title: 'News example 1',
+                              value: 'SHORT DESCRIPTION OF NEWS 1',
                             ),
                             CoverLabel(
-                              title: 'I CREATE',
-                              value: resumeOwner.create.join('\n'),
+                              title: 'News example 2',
+                              value: 'SHORT DESCRIPTION OF NEWS 2',
                             ),
                             CoverLabel(
-                              title: 'I Like',
-                              value: resumeOwner.like.join('\n'),
+                              title: 'News example 3',
+                              value: 'SHORT DESCRIPTION OF NEWS 3',
                             ),
                             CoverLabel(
-                              title: 'SEARCHING JOB',
-                              value: resumeOwner.searchingJobs,
+                              title: 'News example 4',
+                              value: 'SHORT DESCRIPTION OF NEWS 4',
                             ),
                           ],
                         ),
@@ -104,7 +101,7 @@ class LeftOutsideCover extends StatelessWidget {
                   Expanded(
                     child: Center(
                       child: Text(
-                        'A Flutter Web version of my resume.',
+                        'Brochure animation example.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
@@ -115,7 +112,7 @@ class LeftOutsideCover extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            )),
             BookMarkButton(
               alignment: Alignment.centerRight,
               onPressed: onOpenCover,

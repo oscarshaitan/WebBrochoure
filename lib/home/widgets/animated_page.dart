@@ -94,41 +94,11 @@ class ImageScreen extends StatelessWidget {
       child: Container(
         height: context.getHeightPage,
         width: context.getWithPage,
-        color: Colors.white,
-        //decoration: pageDecoration,
-        child: Container(
-          child: Image.network(
-              'https://i.picsum.photos/id/530/300/500.jpg?hmac=3pJ7cCaO6Xox2U_rU8Lvq0-Eg010Hbs2__3jYRsXbus'),
-        ),
-      ),
-    );
-  }
-}
-
-class CoverScreen extends StatelessWidget {
-  final String text;
-  final Color color;
-  final Function() onPressed;
-
-  const CoverScreen({
-    Key key,
-    this.text,
-    this.color,
-    this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: context.getHeightPage,
-      width: context.getWithPage,
-      //decoration: pageDecoration,
-      child: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            onPressed();
-          },
-          child: Text('Flip!'),
+        color: Colors.black,
+        child: Image.asset(
+          'lib/_core/assets/image/cover_1.jpg',
+          height: context.getHeightPage,
+          width: context.getWithPage,
         ),
       ),
     );
